@@ -1,0 +1,23 @@
+{
+	"llvm-target":             "aarch64-unknown-none",
+	"target-endian":           "little",
+	"target-pointer-width":    "64",
+	"target-c-int-width":      "32",
+	"target-os":               "none",
+	"target-env":              "",
+	"target-vendor":           "unknown",
+	"arch":                    "aarch64",
+	"data-layout":             "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128",
+	"linker-flavor":           "ld.lld",
+
+	"os":                      "none",
+	"linker":                  "rust-lld",
+	"disable-redzone":         true,
+	"linker-is-gnu":           true,
+	"max-atomic-width":        "128",
+	"panic-strategy":          "abort",
+	"executables":             true,
+	"relocation-model":        "pic",
+	"code-model":              "large",
+	"features":                "+strict-align,-neon,-fp-armv8"
+}

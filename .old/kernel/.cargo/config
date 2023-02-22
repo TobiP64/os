@@ -1,0 +1,103 @@
+[unstable]
+build-std = ["core", "compiler_builtins", "alloc"]
+
+[target.aarch64-unknown-none]
+rustflags = ["-C", "link-arg=-T./linker/qemu-virt-aarch64.ld"]
+runner = """qemu-system-aarch64 -M virt -cpu cortex-a72 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -d guest_errors,unimp,int,in_asm
+    -kernel"""
+
+[target.riscv32gc-unknown-none]
+rustflags = ["-C", "link-arg=-T./linker/qemu-riscv-none.ld"]
+runner = """qemu-system-riscv32 -M virt -cpu rv32 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios none
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -kernel"""
+
+[target.riscv64gc-unknown-none]
+rustflags = ["-C", "link-arg=-T./linker/qemu-riscv-none.ld"]
+runner = """qemu-system-riscv64 -M virt -cpu rv64 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios none
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -kernel"""
+
+[target.riscv32gc-unknown-sbi]
+rustflags = ["-C", "link-arg=-T./linker/qemu-riscv-sbi.ld"]
+runner = """qemu-system-riscv32 -M virt -cpu rv32 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios default
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -kernel"""
+
+[target.riscv64gc-unknown-sbi]
+rustflags = ["-C", "link-arg=-T./linker/qemu-riscv-sbi.ld"]
+runner = """qemu-system-riscv64 -M virt -cpu rv64 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios default
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -d guest_errors,unimp,int
+    -kernel"""
+
+[target.ppc64-unknown-none]
+rustflags = ["-C", "link-arg=-T./linker/qemu-virt-ppc64.ld"]
+runner = """qemu-system-ppc64 -M powernv -cpu power9 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios none
+    -drive if=none,format=raw,file=res/d0.img,id=d0
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -kernel"""
+
+[target.amd64-unknown-none]
+rustflags = ["-C", "link-arg=-T./linker/qemu-virt-amd64.ld"]
+runner = """qemu-system-riscv64 -M q35 -cpu qemu64 -smp 4 -m 4G -no-reboot -nographic -serial mon:stdio -bios none
+    -blockdev raw,node-name=d0,file.driver=file,file.filename=res/d0.img
+    -device virtio-blk-device,scsi=off,drive=d0
+    -device virtio-rng-device
+    -device virtio-gpu-device
+    -device virtio-net-device
+    -device virtio-tablet-device
+    -device virtio-keyboard-device
+    -kernel"""
+
+[target.x86_64-unknown-uefi]
+runner = "/home/tobias/Projects/os/os.sh runner "
+
+[target.aarch64-unknown-uefi]
+runner = "/home/tobias/Projects/os/os.sh runner "
+
+[target.riscv32gc-unknown-uefi]
+runner = "/home/tobias/Projects/os/os.sh runner "
+
+[target.riscv64gc-unknown-uefi]
+runner = "/home/tobias/Projects/os/os.sh runner "
+
+[target.riscv128gc-unknown-uefi]
+runner = "/home/tobias/Projects/os/os.sh runner "

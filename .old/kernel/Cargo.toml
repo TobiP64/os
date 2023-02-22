@@ -1,0 +1,33 @@
+[package]
+name        = "kernel"
+version     = "0.1.0"
+authors     = ["Tobias Pfeiffer <tobias@tobiaspfeiffer.net>"]
+edition     = "2018"
+publish     = false
+#repository  = "https://gitlab.com/TobiP64/os"
+license     = "MIT"
+description = "The kernel (TM)"
+
+#[profile.dev]
+#panic            = "abort"
+#opt-level        = 2
+#
+#[profile.release]
+#panic            = "abort"
+#opt-level        = "z"
+#debug            = false
+#debug-assertions = false
+#overflow-checks  = false
+## disable this for riscv UEFI target
+#lto              = true
+#codegen-units    = 1
+
+[dependencies]
+hw    = { path = "../kernel-us-hw" }
+spi   = { path = "../kernel-svi" }
+rlibc = "1.0.0"
+
+[features]
+numa               = []
+compression        = []
+allow-uninit-mmap  = []

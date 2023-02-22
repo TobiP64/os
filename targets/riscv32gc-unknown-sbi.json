@@ -1,0 +1,25 @@
+{
+	"llvm-target":             "riscv32",
+	"target-endian":           "little",
+	"target-pointer-width":    "32",
+	"target-c-int-width":      "32",
+	"target-os":               "sbi",
+	"target-env":              "",
+	"target-vendor":           "unknown",
+	"arch":                    "riscv32",
+	"data-layout":             "e-m:e-p:32:32-i64:64-n32-S128",
+	"linker-flavor":           "ld.lld",
+
+	"os":                      "sbi",
+	"cpu":                     "generic-rv32",
+	"linker":                  "rust-lld",
+	"disable-redzone":         true,
+	"max-atomic-width":        "32",
+	"panic-strategy":          "abort",
+	"executables":             true,
+	"atomic-cas":              true,
+	"code-model":              "medium",
+	"emit-debug-gdb-scripts":  false,
+	"eh_frame_header":         false,
+	"features":                "+m,+a,+f,+d,+c"
+}

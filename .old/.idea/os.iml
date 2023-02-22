@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="CPP_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$MODULE_DIR$">
+      <sourceFolder url="file://$MODULE_DIR$/kernel/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/pkg/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/shell/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/apps/sys-ctrl/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/driver-devtree/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/driver-uefi/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service-auth/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service-init/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service-network/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/service-session/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-fw/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-hv/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-sv/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/dri/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-svi/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-boot/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-hvi/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-us-dri/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/kernel-us-hw/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/target" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

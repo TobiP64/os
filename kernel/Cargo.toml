@@ -1,0 +1,13 @@
+[package]
+name         = "kernel"
+version      = "0.1.0"
+authors      = ["Tobias Pfeiffer <tobias.pfeiffer@3d7eed74.net>"]
+edition      = "2021"
+rust-version = "1.66"
+publish      = false
+repository   = ""
+license      = "MIT"
+description  = "The kernel"
+
+[dependencies]
+hw = {  path = "../hw" }

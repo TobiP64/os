@@ -1,0 +1,37 @@
+{
+	"llvm-target":             "aarch64-none-windows",
+	"target-endian":           "little",
+	"target-pointer-width":    "64",
+	"target-c-int-width":      "32",
+	"target-os":               "uefi",
+	"target-env":              "",
+	"target-vendor":           "unknown",
+	"arch":                    "aarch64",
+	"data-layout":             "e-m:e-i8:8:32-i16:16:32-i64:64-i128:128-n32:64-S128",
+	"linker-flavor":           "lld-link",
+	"pre-link-args":           { "lld-link": [
+		"/NOLOGO",
+		"/NXCOMPAT",
+		"/entry:efi_main",
+		"/subsystem:efi_application"
+	] },
+
+	"os":                      "uefi",
+	"linker":                  "rust-lld",
+	"disable-redzone":         true,
+	"linker-is-gnu":           true,
+	"max-atomic-width":        "128",
+	"panic-strategy":          "abort",
+	"position-independent-executables": true,
+	"exe_suffix":              ".efi",
+	"allows_weak_linkage":     false,
+	"stack-probes":            true,
+	"singlethread":            true,
+	"is_like_windows":         true,
+	"is_like_msvc":            false,
+	"abi_return_struct_as_int": true,
+	"emit_debug_gdb_scripts":  false,
+	"executables":             true,
+	"code-model":              "small",
+	"features":                "+strict-align,-neon,-fp-armv8"
+}
